@@ -1,5 +1,5 @@
-import 'package:nubankclone/screens/transfer/form.dart';
 import 'package:flutter/material.dart';
+import 'package:nubankclone/screens/transfer/form.dart';
 import '../../models/transfer.dart';
 import '../user_screen.dart';
 
@@ -15,11 +15,10 @@ class TransfersList extends StatefulWidget {
 }
 
 class TransfersListState extends State<TransfersList> {
-
   @override
   Widget build(BuildContext context) {
-    final transfer = ModalRoute.of(context)!.settings.arguments as Transfer;
-    _update(transfer);
+    // final transfer = ModalRoute.of(context)!.settings.arguments as Transfer;
+    // _update(transfer);
 
     return Scaffold(
       appBar: AppBar(
@@ -55,10 +54,11 @@ class TransfersListState extends State<TransfersList> {
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
             return TransferForm();
-          })).then((receivedTransfer) {
-            debugPrint('capturou : $receivedTransfer \n atualizando a lista...');
-            _update(receivedTransfer);
-          }
+          })).then(
+            (receivedTransfer) {
+              debugPrint('capturou : $receivedTransfer \n atualizando a lista...');
+              _update(receivedTransfer);
+            },
           );
         },
       ),
@@ -67,9 +67,9 @@ class TransfersListState extends State<TransfersList> {
 
   void _update(Transfer receivedTransfer) {
     debugPrint('entrou no update');
-      setState((){
-        widget._transfers.add(receivedTransfer);
-      });
+    setState(() {
+      widget._transfers.add(receivedTransfer);
+    });
   }
 }
 

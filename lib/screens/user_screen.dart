@@ -1,5 +1,6 @@
-import 'package:nubankclone/screens/transfer/form.dart';
 import 'package:flutter/material.dart';
+import 'package:nubankclone/screens/transfer/list.dart';
+
 import 'home.dart';
 
 class UserScreen extends StatelessWidget {
@@ -35,7 +36,8 @@ class UserScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          child: Text('Olá, Ana', style: TextStyle(fontSize: 18)),
+                          child:
+                              Text('Olá, Ana', style: TextStyle(fontSize: 18)),
                         ),
                       ],
                     ),
@@ -46,7 +48,6 @@ class UserScreen extends StatelessWidget {
                 ],
               ),
             ),
-
           ),
         ],
         // title:
@@ -459,7 +460,7 @@ class ActionIcons extends StatelessWidget {
                 icon: Icon(_icon, size: 24),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TransferForm()));
+                      MaterialPageRoute(builder: (context) => TransfersList()));
                 },
               ),
             ),
